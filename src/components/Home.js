@@ -3,7 +3,9 @@ import './Home.css';
 
 function Home() {
   return (
-    <div></div>
+    <div className="home-main-div">
+      <h1>JS-SWAPI-REACT</h1>
+    </div>
   );
 }
 

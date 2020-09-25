@@ -1,0 +1,26 @@
+.navbar-nav-menu{
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    list-style: none;
+}
+
+.navbar-nav-item{
+    display: inline-flex;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 0 5px;
+    width: 100px;
+    text-align: center;
+}
+
+.navbar-nav-item a {
+    text-decoration: none;
+    color: black;
+    margin: 5px auto;
+}
+
+.navbar-nav-item a:hover {
+    text-decoration: none;
+    color: gray;
+}
