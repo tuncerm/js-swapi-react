@@ -43,11 +43,11 @@ Feel free to choose at least 3 of these properties with at least the name of the
 An application that is implementing Step 1 as close as possible to the mock-up of the appendix.
 If your application is functional and shows the data we want, but not particularly follows the provided design we will judge your design ability as well.
 
-UNIT TESTS
+### UNIT TESTS
 We want to see how well you can protect and compartmentalize your code in order to be unit testable and of course tests that can cover the most essential parts of your code.
 
-UI
+### UI
 Feel free to use any UI Library you feel comfortable with. ( i.e. Material-UI, React-Bootstrap, Semantic-UI, etc.)
 
-STATE MANAGEMENT
+### STATE MANAGEMENT
 Feel free to use any state management library you prefer. (i.e. Redux, Mobx, etc.)
