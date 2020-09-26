@@ -1,0 +1,25 @@
+.film-main{
+    box-sizing: border-box;
+    width: 32%;
+    height: 200px;
+    margin: calc(4% / 6);
+    padding: calc(4% / 6);
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.film-title{
+    text-align: left;
+    margin: 0;
+}
+
+.film-detail-div{
+    height: 100px;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.film-date{
+    font-size: smaller;
+    text-align: right;
+}
