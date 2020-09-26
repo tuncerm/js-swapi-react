@@ -1,0 +1,25 @@
+.people-main{
+    width: 98%;
+    margin: 1%;
+    text-align: center;
+}
+
+.people-search-bar{
+    width: 90%;
+    height: 2em;
+    margin: 5px auto;
+    padding: 1em 2em;
+    border: 1px solid gray;
+    border-radius: 1em;
+    outline: none;
+}
+
+.people-search-bar:focus{
+    background-color: lightgray;
+}
+
+.people-list{
+    border-top: 1px solid gray; 
+    display: flex;
+    flex-wrap: wrap;
+}
