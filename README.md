@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Check on Netlity](https://js-swapi-react.netlify.app/)
+To run locally: `npm install && npm start` 
 
-## Available Scripts
+#ASSIGNMENT
+##Step1: Films list
+Write a web app that uses the Star wars API (SWAPI) to display list of films about the StarWars universe.
 
-In the project directory, you can run:
+The app must render a UI that displays all the movies with at least the
+• Title of the movie
+• Opening story ( opening_crawl )
+• Release Date
 
-### `npm start`
+Your app should display this information on a nice layout that you see fit for the purpose.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Extra Points:
+• Display more film data than we expect
+• Animate the opening crawl
+• Make your layout fit for Step 2
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+##Step 2: Design UI
+For Step 2 we would like you to implement Step 1, by following the mockup we provide you on the Appendix of this document. 
 
-### `npm test`
+What you see on the Appendix in a nutshell is a design where every movie is rendered with “More info” link where in its collapsed state displays only the movie Title. When clicking on the tittle bar the description is expanded and you see the rest of the data. 
+On the box were you display the data of step 1 we want you to display the characters that appear on the movie and lay them out 3 per row. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+On every box that a character is displayed we want to see
+• the name of the character,
+• the spieces names that he belongs to and
+• the planet name he came from
+• the vehicle names he used on the film
+• the starship names he used on the film
 
-### `npm run build`
+Feel free to choose at least 3 of these properties with at least the name of the character
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##Step 3: People search page*
+1. User would like to be enter character name into search box and see filtered list of characters. No list displayed until <= 3 characters in search bar.
+2. User info contains links to films the user appears in.Other info from API is also displayed, but films are important for next step.
+3. Clicking on a link will allow user to see information on that film (new page? or expanding element?).
+4. Mobile mode: single column list display of character information. Desktop: 3 column grid of info.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+##Minimum Expectations
+An application that is implementing Step 1 as close as possible to the mock-up of the appendix.
+If your application is functional and shows the data we want, but not particularly follows the provided design we will judge your design ability as well.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+UNIT TESTS
+We want to see how well you can protect and compartmentalize your code in order to be unit testable and of course tests that can cover the most essential parts of your code.
 
-### `npm run eject`
+UI
+Feel free to use any UI Library you feel comfortable with. ( i.e. Material-UI, React-Bootstrap, Semantic-UI, etc.)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+STATE MANAGEMENT
+Feel free to use any state management library you prefer. (i.e. Redux, Mobx, etc.)
