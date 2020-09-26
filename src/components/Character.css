@@ -1,4 +1,4 @@
-.film-main{
+.character-main{
     box-sizing: border-box;
     width: 32%;
     height: 200px;
@@ -9,7 +9,7 @@
     order: 1;
 }
 
-.film-expanded{
+.character-expanded{
     width: 98%;
     height: auto;
     margin: 1%;
@@ -19,29 +19,29 @@
     order: 0;
 }
 
-.film-title{
+.character-title{
     text-align: left;
     margin: 0;
 }
 
-.film-moreinfo-button{
+.character-moreinfo-button{
     background-color: transparent;
     float: right;
     height: 2em;
 }
 
-.film-detail-div{
-    height: 100px;
+.character-detail-div{
+    height: 140px;
     overflow: hidden;
-    text-align: justify;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+.character-detail-div * {
+    margin: 0.5em;
 }
 
-.film-date{
+.character-date{
     font-size: smaller;
     text-align: right;
-}
-
-.film-character-list{
-    display: flex;
-    flex-wrap: wrap;
 }
