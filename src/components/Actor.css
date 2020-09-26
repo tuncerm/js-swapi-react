@@ -31,14 +31,31 @@
 }
 
 .actor-detail-div{
-    height: 140px;
+    overflow: hidden;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.actor-detail-part{
+    width: 50%;
     overflow: hidden;
     text-align: left;
     padding: 0;
     margin: 0;
 }
-.actor-detail-div * {
-    margin: 0.5em;
+
+.actor-movie-item{
+    text-decoration: underline;
+    margin: 0.5em 0;
+    color: blue;
+}
+
+.actor-movie-item:hover{
+    color: blueviolet;
+    cursor: pointer;
 }
 
 .actor-date{
