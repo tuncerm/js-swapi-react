@@ -14,6 +14,14 @@
     margin: 0;
 }
 
+.filmcard-title-link{
+    text-decoration: none;
+    color: black;
+}
+.filmcard-title-link:hover{
+    color: darkslateblue;
+}
+
 .filmcard-detail-div{
     height: 100px;
     overflow: hidden;
