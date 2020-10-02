@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import {CacheContext} from '../context/cache-context';
 
 import Spinner from './Spinner';
-import Film from './Film';
+import FilmCard from './FilmCard';
 
 import './FilmList.css';
 
@@ -32,7 +32,7 @@ export default function FilmList() {
       <h1>Star Wars Films</h1>
       {isLoading && <Spinner asOverlay/>}
       <div className="filmlist-movies">
-        {movies && movies.map(movie => <Film key={btoa(movie.url)}  movie={movie}/>)}
+        {movies && movies.map(movie => <FilmCard key={btoa(movie.url)}  movie={movie}/>)}
       </div>
     </div>
   );
