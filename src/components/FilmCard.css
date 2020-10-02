@@ -1,4 +1,4 @@
-.film-main{
+.filmcard-main{
     box-sizing: border-box;
     width: 32%;
     height: 200px;
@@ -9,39 +9,18 @@
     order: 1;
 }
 
-.film-expanded{
-    width: 98%;
-    height: auto;
-    margin: 1%;
-    padding: 1%;
-    border: 1px solid gray;
-    border-radius: 3px;
-    order: 0;
-}
-
-.film-title{
+.filmcard-title{
     text-align: left;
     margin: 0;
 }
 
-.film-moreinfo-button{
-    background-color: transparent;
-    float: right;
-    height: 2em;
-}
-
-.film-detail-div{
+.filmcard-detail-div{
     height: 100px;
     overflow: hidden;
     text-align: justify;
 }
 
-.film-date{
+.filmcard-date{
     font-size: smaller;
     text-align: right;
-}
-
-.film-character-list{
-    display: flex;
-    flex-wrap: wrap;
 }
