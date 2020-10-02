@@ -43,15 +43,16 @@ export default function Character({ url }) {
 
     return (
         <div className={"character-main"}>
-            {isLoading && <Spinner/>}
-            <h2 className="character-title">{character.name}</h2>
-            <hr/>
-            <div className="character-detail-div">
-                <p>Homeworld: {character.planet}</p>
-                <p>Species: {(character.species && character.species.join(' - ')) || "Not Specified"}</p>
-                <p>Vehicles: {(character.vehicles && character.vehicles.join(', ')) || "N/A"}</p>
-                <p>Starhips: {(character.starships && character.starships.join(', ')) || "N/A"}</p>
-            </div>
+            {isLoading ? <Spinner/> : <>
+                <h2 className="character-title">{character.name}</h2>
+                <hr/>
+                <div className="character-detail-div">
+                    <p>Homeworld: {character.planet}</p>
+                    <p>Species: {(character.species && character.species.join(' - ')) || "Not Specified"}</p>
+                    <p>Vehicles: {(character.vehicles && character.vehicles.join(', ')) || "N/A"}</p>
+                    <p>Starhips: {(character.starships && character.starships.join(', ')) || "N/A"}</p>
+                </div>
+            </>}
         </div>
     )
 }
