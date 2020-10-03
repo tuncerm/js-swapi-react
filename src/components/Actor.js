@@ -48,20 +48,19 @@ export default function Actor({ actor }) {
 
   return (
     <>
-      {modal && <Modal url={modalUrl} close={closeModal} />}{" "}
+      {modal && <Modal url={modalUrl} close={closeModal} />}
       <div className={"actor-main"}>
-        {" "}
         {isLoading ? (
           <Spinner />
         ) : (
           <div className="actor-detail-div">
             <div className="actor-detail-part">
-              <h5 className="actor-title"> {name} </h5>{" "}
-              <p> Born in {birth_year} </p> <p> Height {height} </p>{" "}
-              <p> {gender} </p>{" "}
-            </div>{" "}
+              <h5 className="actor-title"> {name} </h5>
+              <p> Born in {birth_year} </p> <p> Height {height} </p>
+              <p> {gender} </p>
+            </div>
             <div className="actor-detail-part">
-              <h5 className="actor-title"> Movies </h5>{" "}
+              <h5 className="actor-title"> Movies </h5>
               {actorFilms.map((film) => (
                 <p
                   key={btoa(film.url)}
@@ -70,14 +69,13 @@ export default function Actor({ actor }) {
                   }}
                   className="actor-movie-item"
                 >
-                  {" "}
-                  {film.title}{" "}
+                  {film.title}
                 </p>
-              ))}{" "}
-            </div>{" "}
+              ))}
+            </div>
           </div>
-        )}{" "}
-      </div>{" "}
+        )}
+      </div>
     </>
   );
 }
