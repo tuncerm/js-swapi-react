@@ -11,6 +11,7 @@ import Film from './components/Film';
 import Planets from './components/Planets';
 import Species from './components/Species';
 import Vehicles from './components/Vehicles';
+import StarShips from './components/StarShips';
 import People from './components/People';
 
 import './App.css';
@@ -30,7 +31,7 @@ function App() {
             <Route path="/people" exact><People /></Route>
             <Route path="/planets" exact><Planets /></Route>
             <Route path="/species" exact><Species /></Route>
-            {/* <Route path="/starships" exact><Starship /></Route> */}
+            <Route path="/starships" exact><StarShips /></Route>
             <Route path="/vehicles" exact><Vehicles /></Route>
             <Redirect to="/" />
           </Switch>

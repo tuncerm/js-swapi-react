@@ -1,0 +1,8 @@
+.starships-main{
+    text-align: center;
+}
+
+.starships-item{
+    display: flex;
+    flex-wrap: wrap;
+}
