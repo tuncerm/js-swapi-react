@@ -1,0 +1,8 @@
+.species-main{
+    text-align: center;
+}
+
+.species-item{
+    display: flex;
+    flex-wrap: wrap;
+}
