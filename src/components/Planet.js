@@ -1,16 +1,16 @@
-import React, {useEffect, useState, useContext} from 'react';
-import {useParams} from 'react-router-dom';
+import React, { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
 
-import { CacheContext } from '../context/cache-context';
+import { CacheContext } from "../context/cache-context";
 
-import Spinner from './Spinner';
-import SpeciesCard from './SpeciesCard';
-import FilmCard from './FilmCard';
+import Spinner from "./Spinner";
+import CharacterCard from "./CharacterCard";
+import FilmCard from "./FilmCard";
 
-import './Planet.css';
+import "./Planet.css";
 
-function Planet() {
-  const {planetId} = useParams();
+export default function Planet() {
+  const { planetId } = useParams();
   const [isLoading, setLoading] = useState(false);
   const [planet, setPlanet] = useState({});
 
@@ -30,34 +30,40 @@ function Planet() {
     fetchPlanet();
   }, [getData, planetId]);
 
-  console.log(planet);
-
   return (
     <div className="planet-main">
-      { isLoading && <Spinner asOverlay /> }
+      {isLoading && <Spinner asOverlay />}
       <h2 className="planet-title">{planet.name}</h2>
-      { !isLoading && <div className="planet-content">
-        <p>Rotation Period: {planet.rotation_period}</p>
-        <p>Orbital Period: {planet.orbital_period}</p>
-        <p>Diameter: {planet.diameter}</p>
-        <p>Climate: {planet.climate}</p>
-        <p>Gravity: {planet.gravity}</p>
-        <p>Terrain: {planet.terrain}</p>
-        <p>Surface Water: {planet.surface_water}</p>
-        <p>Population: {planet.population}</p>
-        <hr/>
-        <h3>Residents</h3>
-        <div className="planet-subarray">
-          {planet && planet.residents && planet.residents.map(specie=><SpeciesCard key={btoa(specie)} url={specie}/>)}
+      {!isLoading && (
+        <div className="planet-content">
+          <p>Rotation Period: {planet.rotation_period}</p>
+          <p>Orbital Period: {planet.orbital_period}</p>
+          <p>Diameter: {planet.diameter}</p>
+          <p>Climate: {planet.climate}</p>
+          <p>Gravity: {planet.gravity}</p>
+          <p>Terrain: {planet.terrain}</p>
+          <p>Surface Water: {planet.surface_water}</p>
+          <p>Population: {planet.population}</p>
+          <hr />
+          <h3>Residents</h3>
+          <div className="planet-subarray">
+            {planet &&
+              planet.residents &&
+              planet.residents.map((character) => (
+                <CharacterCard key={btoa(character)} url={character} />
+              ))}
+          </div>
+          <hr />
+          <h3>Films</h3>
+          <div className="planet-subarray">
+            {planet &&
+              planet.films &&
+              planet.films.map((film) => (
+                <FilmCard key={btoa(film)} url={film} />
+              ))}
+          </div>
         </div>
-        <hr/>
-        <h3>Films</h3>
-        <div className="planet-subarray">
-          {planet && planet.films && planet.films.map(film=><FilmCard key={btoa(film)} url={film}/>)}
-        </div>
-      </div> }
+      )}
     </div>
   );
 }
-
-export default Planet;

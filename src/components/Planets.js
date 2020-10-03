@@ -3,10 +3,10 @@ import React, { useState, useEffect, useContext } from "react";
 import { CacheContext } from "../context/cache-context";
 
 import Spinner from "./Spinner";
+import Paginator from "./Paginator";
 import PlanetCard from "./PlanetCard";
 
 import "./Planets.css";
-import Paginator from "./Paginator";
 
 export default function Planets() {
   const [page, setPage] = useState(1);
