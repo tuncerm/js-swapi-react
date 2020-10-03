@@ -1,51 +1,54 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
-import Actor from "./Actor";
+import { CacheContext } from "../context/cache-context";
 
-import { useFetch } from "../hooks/http.hook";
+import Spinner from "./Spinner";
+import Paginator from "./Paginator";
+import CharacterCard from "./CharacterCard";
 
 import "./People.css";
 
-function People() {
-  const { sendRequest } = useFetch();
-  const [input, setInput] = useState("");
-  const [peopleList, setPeopleList] = useState([]);
+export default function People() {
+  const [page, setPage] = useState(1);
+  const [isLoading, setLoading] = useState(false);
+  const [count, setCount] = useState(0);
+  const [people, setPeople] = useState([]);
+  const itemsPerPage = 10;
 
-  const searchPeople = useCallback(
-    async (url) => {
-      const response = await sendRequest(url);
-      setPeopleList(response.results);
-    },
-    [sendRequest]
-  );
+  const { getData } = useContext(CacheContext);
 
-  const onChange = (e) => {
-    const s = e.target.value;
-    if (s.length > 2) {
-      searchPeople(`${process.env.REACT_APP_API_URL}/people/?search=${s}`);
-    } else {
-      setPeopleList([]);
-    }
-    setInput(s);
-  };
+  useEffect(() => {
+    const fetchPeople = async () => {
+      try {
+        setLoading(true);
+        const url = `${process.env.REACT_APP_API_URL}/people/?page=${page}`;
+        const response = await getData(url);
+        setCount(response.count);
+        setPeople(response.results);
+        setLoading(false);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchPeople();
+  }, [getData, page]);
 
   return (
     <div className="people-main">
-      <h1>Star Wars Characters</h1>
-      <input
-        className="people-search-bar"
-        type="text"
-        placeholder="Search for Movie Characters"
-        onChange={onChange}
-        value={input}
-      />
-      <div className="people-list">
-        {peopleList.map((p) => (
-          <Actor key={btoa(p.url)} actor={p} />
-        ))}
+      <h1>Star Wars Planets</h1>
+      {isLoading && <Spinner asOverlay />}
+      <div className="people-item">
+        {people &&
+          people.map((character) => (
+            <CharacterCard key={`${btoa(character.url)}`} character={character} />
+          ))}
       </div>
+      <Paginator
+        current={page}
+        count={count}
+        itemsPerPage={itemsPerPage}
+        setPage={setPage}
+      />
     </div>
   );
 }
-
-export default People;
