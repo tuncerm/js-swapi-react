@@ -1,18 +1,51 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 
-import './VehiclesCard.css';
+import Spinner from "./Spinner";
 
-export default function VehiclesCard({vehicle}) {
+import { CacheContext } from "../context/cache-context";
+import "./VehiclesCard.css";
+
+export default function VehiclesCard({ vehicle, url }) {
+  const [data, setData] = useState(vehicle);
+  const [isLoading, setLoading] = useState(false);
+  const { getData } = useContext(CacheContext);
+
+  useEffect(() => {
+    const fetchVehicleData = async () => {
+      try {
+        setLoading(true);
+        if (url) {
+          const response = await getData(url);
+          setData(response);
+        }
+        setLoading(false);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchVehicleData();
+  }, [url, getData]);
+
   return (
     <div className="vehiclescard-main">
-      <Link to={`/vehicles/${btoa(vehicle.url)}`} className="vehiclescard-title-link"><h2 className="vehiclescard-title">{vehicle.name}</h2></Link>
-      <hr/>
-      <div className="vehiclescard-detail-div">
-        <p>Model: {vehicle.model}</p>
-        <p>Manufacturer: {vehicle.manufacturer}</p>
-        <p>Cost: {vehicle.cost_in_credits}</p>
-      </div>
+      {isLoading && <Spinner />}
+      {!isLoading && data && (
+        <>
+          <Link
+            to={`/vehicles/${btoa(data.url)}`}
+            className="vehiclescard-title-link"
+          >
+            <h2 className="vehiclescard-title">{data.name}</h2>
+          </Link>
+          <hr />
+          <div className="vehiclescard-detail-div">
+            <p>Model: {data.model}</p>
+            <p>Manufacturer: {data.manufacturer}</p>
+            <p>Cost: {data.cost_in_credits}</p>
+          </div>
+        </>
+      )}
     </div>
   );
 }
