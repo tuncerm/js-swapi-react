@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import './PlanetCard.css';
 
-export default function FilmCard({planet}) {
+export default function PlanetCard({planet}) {
   return (
     <div className="planetcard-main">
       <Link to={`/planets/${btoa(planet.url)}`} className="filmcard-title-link"><h2 className="filmcard-title">{planet.name}</h2></Link>
