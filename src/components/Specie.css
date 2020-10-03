@@ -1,0 +1,15 @@
+.specie-main {
+  text-align: center;
+}
+
+.specie-title {
+  text-align: center;
+}
+.specie-content {
+  text-align: center;
+}
+
+.specie-subarray {
+  display: flex;
+  flex-wrap: wrap;
+}
