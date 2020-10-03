@@ -1,5 +1,5 @@
 import React from 'react';
-import './Starship.css';
+import './StarShip.css';
 
 function Starship() {
   return (

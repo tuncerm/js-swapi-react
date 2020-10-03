@@ -16,7 +16,6 @@ export default function Film() {
     useEffect(() => {
         const fetchMovie = async () => {
             try {
-                console.log(filmId);
                 const response = await getData(atob(filmId));
                 setFilm(response);
             } catch (e) {
