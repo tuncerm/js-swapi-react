@@ -6,7 +6,7 @@ import './PlanetCard.css';
 export default function PlanetCard({planet}) {
   return (
     <div className="planetcard-main">
-      <Link to={`/planets/${btoa(planet.url)}`} className="filmcard-title-link"><h2 className="filmcard-title">{planet.name}</h2></Link>
+      <Link to={`/planets/${btoa(planet.url)}`} className="planetcard-title-link"><h2 className="planetcard-title">{planet.name}</h2></Link>
       <hr/>
       <div className="filmcard-detail-div">
         <p>Climate: {planet.climate}</p>
