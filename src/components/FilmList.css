@@ -1,8 +1,8 @@
-.filmlist-main{
-    text-align: center;
+.filmlist-main {
+  text-align: center;
 }
 
-.filmlist-movies{
-    display: flex;
-    flex-wrap: wrap;
+.filmlist-movies {
+  display: flex;
+  flex-wrap: wrap;
 }

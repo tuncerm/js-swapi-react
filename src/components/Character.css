@@ -1,47 +1,47 @@
-.character-main{
-    box-sizing: border-box;
-    width: 32%;
-    height: 200px;
-    margin: calc(4% / 6);
-    padding: calc(4% / 6);
-    border: 1px solid gray;
-    border-radius: 3px;
-    order: 1;
+.character-main {
+  box-sizing: border-box;
+  width: 32%;
+  height: 200px;
+  margin: calc(4% / 6);
+  padding: calc(4% / 6);
+  border: 1px solid gray;
+  border-radius: 3px;
+  order: 1;
 }
 
-.character-expanded{
-    width: 98%;
-    height: auto;
-    margin: 1%;
-    padding: 1%;
-    border: 1px solid gray;
-    border-radius: 3px;
-    order: 0;
+.character-expanded {
+  width: 98%;
+  height: auto;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid gray;
+  border-radius: 3px;
+  order: 0;
 }
 
-.character-title{
-    text-align: left;
-    margin: 0;
+.character-title {
+  text-align: left;
+  margin: 0;
 }
 
-.character-moreinfo-button{
-    background-color: transparent;
-    float: right;
-    height: 2em;
+.character-moreinfo-button {
+  background-color: transparent;
+  float: right;
+  height: 2em;
 }
 
-.character-detail-div{
-    height: 140px;
-    overflow: hidden;
-    text-align: left;
-    padding: 0;
-    margin: 0;
+.character-detail-div {
+  height: 140px;
+  overflow: hidden;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 .character-detail-div * {
-    margin: 0.5em;
+  margin: 0.5em;
 }
 
-.character-date{
-    font-size: smaller;
-    text-align: right;
+.character-date {
+  font-size: smaller;
+  text-align: right;
 }

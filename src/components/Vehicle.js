@@ -1,10 +1,8 @@
-import React from 'react';
-import './Vehicle.css';
+import React from "react";
+import "./Vehicle.css";
 
 function Vehicle() {
-  return (
-    <div></div>
-  );
+  return <div></div>;
 }
 
 export default Vehicle;

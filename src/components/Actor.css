@@ -1,64 +1,64 @@
-.actor-main{
-    box-sizing: border-box;
-    width: 32%;
-    height: 200px;
-    margin: calc(4% / 6);
-    padding: calc(4% / 6);
-    border: 1px solid gray;
-    border-radius: 3px;
-    order: 1;
+.actor-main {
+  box-sizing: border-box;
+  width: 32%;
+  height: 200px;
+  margin: calc(4% / 6);
+  padding: calc(4% / 6);
+  border: 1px solid gray;
+  border-radius: 3px;
+  order: 1;
 }
 
-.actor-expanded{
-    width: 98%;
-    height: auto;
-    margin: 1%;
-    padding: 1%;
-    border: 1px solid gray;
-    border-radius: 3px;
-    order: 0;
+.actor-expanded {
+  width: 98%;
+  height: auto;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid gray;
+  border-radius: 3px;
+  order: 0;
 }
 
-.actor-title{
-    text-align: left;
-    margin: 0;
+.actor-title {
+  text-align: left;
+  margin: 0;
 }
 
-.actor-moreinfo-button{
-    background-color: transparent;
-    float: right;
-    height: 2em;
+.actor-moreinfo-button {
+  background-color: transparent;
+  float: right;
+  height: 2em;
 }
 
-.actor-detail-div{
-    overflow: hidden;
-    text-align: left;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
+.actor-detail-div {
+  overflow: hidden;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.actor-detail-part{
-    width: 50%;
-    overflow: hidden;
-    text-align: left;
-    padding: 0;
-    margin: 0;
+.actor-detail-part {
+  width: 50%;
+  overflow: hidden;
+  text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
-.actor-movie-item{
-    text-decoration: underline;
-    margin: 0.5em 0;
-    color: blue;
+.actor-movie-item {
+  text-decoration: underline;
+  margin: 0.5em 0;
+  color: blue;
 }
 
-.actor-movie-item:hover{
-    color: blueviolet;
-    cursor: pointer;
+.actor-movie-item:hover {
+  color: blueviolet;
+  cursor: pointer;
 }
 
-.actor-date{
-    font-size: smaller;
-    text-align: right;
+.actor-date {
+  font-size: smaller;
+  text-align: right;
 }

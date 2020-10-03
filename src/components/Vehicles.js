@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 
-import { CacheContext } from '../context/cache-context';
+import { CacheContext } from "../context/cache-context";
 
-import Spinner from './Spinner';
-import Paginator from './Paginator';
-import VehiclesCard from './VehiclesCard';
+import Spinner from "./Spinner";
+import Paginator from "./Paginator";
+import VehiclesCard from "./VehiclesCard";
 
-import './Vehicles.css';
+import "./Vehicles.css";
 
 export default function Vehicles() {
   const [page, setPage] = useState(1);
@@ -38,9 +38,17 @@ export default function Vehicles() {
       <h1>Star Wars Vehicles</h1>
       {isLoading && <Spinner asOverlay />}
       <div className="vehicles-item">
-        {vehicles && vehicles.map(vehicle => <VehiclesCard key={`${btoa(vehicle.url)}`} vehicle={vehicle}/>)}
+        {vehicles &&
+          vehicles.map((vehicle) => (
+            <VehiclesCard key={`${btoa(vehicle.url)}`} vehicle={vehicle} />
+          ))}
       </div>
-      <Paginator current={page} count={count} itemsPerPage={itemsPerPage} setPage={setPage} />
+      <Paginator
+        current={page}
+        count={count}
+        itemsPerPage={itemsPerPage}
+        setPage={setPage}
+      />
     </div>
   );
 }

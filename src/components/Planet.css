@@ -1,15 +1,15 @@
-.filmlist-main{
-    text-align: center;
+.filmlist-main {
+  text-align: center;
 }
 
-.planet-title{
-    text-align: center;
+.planet-title {
+  text-align: center;
 }
-.planet-content{
-    text-align: center;
+.planet-content {
+  text-align: center;
 }
 
-.planet-subarray{
-    display: flex;
-    flex-wrap: wrap;
+.planet-subarray {
+  display: flex;
+  flex-wrap: wrap;
 }

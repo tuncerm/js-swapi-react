@@ -1,23 +1,25 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 
-import {CacheContext} from '../context/cache-context';
+import { CacheContext } from "../context/cache-context";
 
-import Spinner from './Spinner';
-import FilmCard from './FilmCard';
+import Spinner from "./Spinner";
+import FilmCard from "./FilmCard";
 
-import './FilmList.css';
+import "./FilmList.css";
 
 export default function FilmList() {
   const [isLoading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
 
-  const {getData} = useContext(CacheContext);
-  
-  useEffect(()=>{
+  const { getData } = useContext(CacheContext);
+
+  useEffect(() => {
     const fetchMovies = async () => {
       try {
         setLoading(true);
-        const response = await getData(`${process.env.REACT_APP_API_URL}/films/`);
+        const response = await getData(
+          `${process.env.REACT_APP_API_URL}/films/`
+        );
         setMovies(response.results);
         setLoading(false);
       } catch (e) {
@@ -30,9 +32,12 @@ export default function FilmList() {
   return (
     <div className="filmlist-main">
       <h1>Star Wars Films</h1>
-      {isLoading && <Spinner asOverlay/>}
+      {isLoading && <Spinner asOverlay />}
       <div className="filmlist-movies">
-        {movies && movies.map(movie => <FilmCard key={btoa(movie.url)}  movie={movie}/>)}
+        {movies &&
+          movies.map((movie) => (
+            <FilmCard key={btoa(movie.url)} movie={movie} />
+          ))}
       </div>
     </div>
   );

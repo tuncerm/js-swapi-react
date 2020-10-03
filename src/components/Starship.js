@@ -1,10 +1,8 @@
-import React from 'react';
-import './StarShip.css';
+import React from "react";
+import "./StarShip.css";
 
 function Starship() {
-  return (
-    <div></div>
-  );
+  return <div></div>;
 }
 
 export default Starship;

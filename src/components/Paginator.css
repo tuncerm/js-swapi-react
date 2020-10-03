@@ -1,32 +1,33 @@
-.paginator-main{
-    text-align: center;
+.paginator-main {
+  text-align: center;
 }
 
-.paginator-item{
-    border: 1px solid gray;
-    border-radius: 0;
-    margin: 0;
-    height: 2em;
-    width: 2em;
-    text-align: center;
+.paginator-item {
+  border: 1px solid gray;
+  border-radius: 0;
+  margin: 0;
+  height: 2em;
+  width: 2em;
+  text-align: center;
 }
 
-.paginator-next,.paginator-prev {
-    width: 4em;
+.paginator-next,
+.paginator-prev {
+  width: 4em;
 }
 
-.paginator-item:first-child{
-    border-radius: 5px 0 0 5px;
+.paginator-item:first-child {
+  border-radius: 5px 0 0 5px;
 }
 
-.paginator-item:last-child{
-    border-radius: 0 5px 5px 0;
+.paginator-item:last-child {
+  border-radius: 0 5px 5px 0;
 }
 
-.paginator-item:focus{
-    outline: none;
+.paginator-item:focus {
+  outline: none;
 }
 
-.paginator-item-active{
-    background-color: burlywood;
+.paginator-item-active {
+  background-color: burlywood;
 }

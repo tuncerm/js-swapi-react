@@ -1,8 +1,8 @@
-.vehicles-main{
-    text-align: center;
+.vehicles-main {
+  text-align: center;
 }
 
-.vehicles-item{
-    display: flex;
-    flex-wrap: wrap;
+.vehicles-item {
+  display: flex;
+  flex-wrap: wrap;
 }

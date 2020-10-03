@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 
-import { CacheContext } from '../context/cache-context';
+import { CacheContext } from "../context/cache-context";
 
-import Spinner from './Spinner';
-import Paginator from './Paginator';
-import StarShipsCard from './StarShipsCard';
+import Spinner from "./Spinner";
+import Paginator from "./Paginator";
+import StarShipsCard from "./StarShipsCard";
 
-import './StarShips.css';
+import "./StarShips.css";
 
 export default function StarShips() {
   const [page, setPage] = useState(1);
@@ -38,9 +38,17 @@ export default function StarShips() {
       <h1>Star Wars StarShips</h1>
       {isLoading && <Spinner asOverlay />}
       <div className="starships-item">
-        {starships && starships.map(starship => <StarShipsCard key={`${btoa(starship.url)}`} starship={starship}/>)}
+        {starships &&
+          starships.map((starship) => (
+            <StarShipsCard key={`${btoa(starship.url)}`} starship={starship} />
+          ))}
       </div>
-      <Paginator current={page} count={count} itemsPerPage={itemsPerPage} setPage={setPage} />
+      <Paginator
+        current={page}
+        count={count}
+        itemsPerPage={itemsPerPage}
+        setPage={setPage}
+      />
     </div>
   );
 }
