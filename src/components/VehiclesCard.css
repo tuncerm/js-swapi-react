@@ -1,0 +1,29 @@
+.vehiclescard-main{
+    box-sizing: border-box;
+    width: 48%;
+    height: 200px;
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid gray;
+    border-radius: 3px;
+    order: 1;
+}
+
+.vehiclescard-title{
+    text-align: left;
+    margin: 0;
+}
+
+.vehiclescard-title-link{
+    text-decoration: none;
+    color: black;
+}
+.vehiclescard-title-link:hover{
+    color: darkslateblue;
+}
+
+.vehiclescard-detail-div{
+    height: 100px;
+    overflow: hidden;
+    text-align: justify;
+}

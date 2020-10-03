@@ -1,0 +1,8 @@
+.vehicles-main{
+    text-align: center;
+}
+
+.vehicles-item{
+    display: flex;
+    flex-wrap: wrap;
+}
