@@ -1,0 +1,15 @@
+.starship-main {
+  text-align: center;
+}
+
+.starship-title {
+  text-align: center;
+}
+.starship-content {
+  text-align: center;
+}
+
+.starship-subarray {
+  display: flex;
+  flex-wrap: wrap;
+}
