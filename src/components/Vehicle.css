@@ -1,0 +1,15 @@
+.vehicle-main {
+  text-align: center;
+}
+
+.vehicle-title {
+  text-align: center;
+}
+.vehicle-content {
+  text-align: center;
+}
+
+.vehicle-subarray {
+  display: flex;
+  flex-wrap: wrap;
+}
