@@ -8,6 +8,7 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import FilmList from './components/FilmList';
 import Film from './components/Film';
+import Planets from './components/Planets';
 import People from './components/People';
 
 import './App.css';
@@ -25,8 +26,8 @@ function App() {
             <Route path="/films" exact><FilmList /></Route>
             <Route path="/films/:filmId" exact><Film /></Route>
             <Route path="/people" exact><People /></Route>
-            {/* <Route path="/planets" exact><Planet /></Route>
-            <Route path="/species" exact><Species /></Route>
+            <Route path="/planets" exact><Planets /></Route>
+            {/* <Route path="/species" exact><Species /></Route>
             <Route path="/starships" exact><Starship /></Route>
             <Route path="/vehicles" exact><Vehicle /></Route> */}
             <Redirect to="/" />
