@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
+import { Link } from "react-router-dom";
+
 import { CacheContext } from "../context/cache-context";
 
 import Spinner from "./Spinner";
@@ -8,7 +10,7 @@ import Modal from "./Modal";
 import "./Actor.css";
 
 export default function Actor({ actor }) {
-  const { name, height, birth_year, gender, films } = actor;
+  const { name, height, birth_year, gender, films, url } = actor;
   const [isLoading, setLoading] = useState(false);
   const [modal, setModal] = useState(false);
   const [modalUrl, setModalUrl] = useState("");
@@ -55,7 +57,7 @@ export default function Actor({ actor }) {
         ) : (
           <div className="actor-detail-div">
             <div className="actor-detail-part">
-              <h5 className="actor-title"> {name} </h5>
+              <h5 className="actor-title"><Link to={`/people/${btoa(url)}`}>{name}</Link></h5>
               <p> Born in {birth_year} </p> <p> Height {height} </p>
               <p> {gender} </p>
             </div>
