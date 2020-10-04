@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { CacheContext } from "../context/cache-context";
 
@@ -36,7 +37,7 @@ export default function Modal({ url, close }) {
         <hr />
         {!isLoading && (
           <>
-            <h4>{movie.title}</h4>
+            <h4><Link to={`/films/${btoa(movie.url)}`}>{movie.title}</Link></h4>
             <p>
               <span className="dark">Director:</span> {movie.director}
             </p>
