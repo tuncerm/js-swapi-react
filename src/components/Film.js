@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { CacheContext } from "../context/cache-context";
 
-import Character from "./Character";
+import CharacterCard from "./CharacterCard";
+import PlanetCard from "./PlanetCard";
+import SpeciesCard from "./SpeciesCard";
+import VehiclesCard from "./VehiclesCard";
+import StarShipsCard from "./StarShipsCard";
 
 import "./Film.css";
 
@@ -11,7 +15,6 @@ export default function Film() {
   const { getData } = useContext(CacheContext);
   const { filmId } = useParams();
   const [film, setFilm] = useState({});
-  const [isExpanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -29,33 +32,64 @@ export default function Film() {
     <div className="film-main">
       {film && (
         <>
-          <Link to="/films">
-            <i className="back-button">&laquo; Back</i>
-          </Link>
           <h2 className="film-title">
             {film.title} E.{film.episode_id}
           </h2>
           <hr />
           <div className="film-detail-div">
             <p>{film.opening_crawl}</p>
+            <p>Director: {film.director}</p>
+            <p>Producer: {film.producer}</p>
+            <p>Release Date: {film.release_date}</p>
           </div>
-          <hr />
-          <p className="film-date">Release Date: {film.release_date}</p>
         </>
       )}
       <hr />
-      <h3 onClick={() => setExpanded((e) => !e)}>
-        Characters <span>({film.characters && film.characters.length})</span>
-      </h3>
-      {isExpanded && film && film.characters && (
-        <div>
-          <div className="film-character-list">
-            {film.characters.map((c) => (
-              <Character key={btoa(c)} url={c} />
-            ))}
-          </div>
-        </div>
-      )}
+      <h3>Characters</h3>
+      <div className="film-subarray">
+        {film &&
+          film.characters &&
+          film.characters.map((character) => (
+            <CharacterCard key={btoa(character)} url={character} />
+          ))}
+      </div>
+      <hr />
+      <h3>Planets</h3>
+      <div className="film-subarray">
+        {film &&
+          film.planets &&
+          film.planets.map((planet) => (
+            <PlanetCard key={btoa(planet)} url={planet} />
+          ))}
+      </div>
+      <hr />
+      <h3>Species</h3>
+      <div className="film-subarray">
+        {film &&
+          film.species &&
+          film.species.map((specie) => (
+            <SpeciesCard key={btoa(specie)} url={specie} />
+          ))}
+      </div>
+      <hr />
+      <h3>Vehicles</h3>
+      <div className="film-subarray">
+        {film &&
+          film.vehicles &&
+          film.vehicles.map((vehicle) => (
+            <VehiclesCard key={btoa(vehicle)} url={vehicle} />
+          ))}
+      </div>
+      <hr />
+      <h3>StarShips</h3>
+      <div className="film-subarray">
+        {film &&
+          film.starships &&
+          film.starships.map((starship) => (
+            <StarShipsCard key={btoa(starship)} url={starship} />
+          ))}
+      </div>
+      <hr />
     </div>
   );
 }
