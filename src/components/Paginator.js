@@ -3,7 +3,6 @@ import React from "react";
 import "./Paginator.css";
 
 export default function Paginator({
-  baseUrl,
   current,
   count,
   itemsPerPage,
@@ -17,14 +16,13 @@ export default function Paginator({
 
   return (
     <div className="paginator-main">
-      {prev && (
-        <button
-          className="paginator-item paginator-prev"
-          onClick={() => setPage(current - 1)}
-        >
-          Prev
-        </button>
-      )}
+      <button
+        disabled={!prev}
+        className="paginator-item paginator-prev"
+        onClick={() => setPage(current - 1)}
+      >
+        Prev
+      </button>
       {pages.map((p) => (
         <button
           className={`paginator-item ${
@@ -36,14 +34,13 @@ export default function Paginator({
           {p}
         </button>
       ))}
-      {next && (
-        <button
-          className="paginator-item paginator-next"
-          onClick={() => setPage(current + 1)}
-        >
-          Next
-        </button>
-      )}
+      <button
+        disabled={!next}
+        className="paginator-item paginator-next"
+        onClick={() => setPage(current + 1)}
+      >
+        Next
+      </button>
     </div>
   );
 }

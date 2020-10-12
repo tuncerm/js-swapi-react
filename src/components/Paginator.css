@@ -28,6 +28,13 @@
   outline: none;
 }
 
+.paginator-item:hover {
+  border:1px solid azure;
+  cursor: pointer;
+  transition: 200ms;
+  box-shadow: 0 2px 5px 0 cyan;
+}
+
 .paginator-item-active {
   background-color: burlywood;
 }
