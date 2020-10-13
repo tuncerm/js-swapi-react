@@ -1,6 +1,7 @@
 .app-main {
   width: 90%;
   margin: 0 auto;
+  z-index: 2000;
 }
 
 body {
@@ -19,7 +20,7 @@ body {
   -webkit-transform: scale(0.75);
   -moz-transform: scale(0.75);
   transform: scale(0.75);
-  z-index: -1000;
+  z-index: -5;
 }
 .sun {
   width: 144px;

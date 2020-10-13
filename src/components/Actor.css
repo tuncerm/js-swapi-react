@@ -9,29 +9,12 @@
   order: 1;
 }
 
-.actor-expanded {
-  width: 98%;
-  height: auto;
-  margin: 1%;
-  padding: 1%;
-  border: 1px solid gray;
-  border-radius: 3px;
-  order: 0;
-}
-
 .actor-title {
   text-align: left;
   margin: 0;
 }
 
-.actor-moreinfo-button {
-  background-color: transparent;
-  float: right;
-  height: 2em;
-}
-
 .actor-detail-div {
-  overflow: hidden;
   text-align: left;
   padding: 0;
   margin: 0;
@@ -40,7 +23,7 @@
 }
 
 .actor-detail-part {
-  width: 33%;
+  width: 50%;
   overflow: hidden;
   text-align: left;
   padding: 0;
@@ -58,20 +41,10 @@
   cursor: pointer;
 }
 
-.actor-date {
-  font-size: smaller;
-  text-align: right;
-}
-
-html, body {
-  background: #222;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-
 .actor-view {
-  position: absolute;
+  z-index: -1;
+  position: relative;
+  margin: 0 auto;
   padding-top: 40px;
   perspective: 200;
 }
