@@ -6,6 +6,9 @@ import { useFetch } from "../hooks/http.hook";
 
 import "./Home.css";
 
+import star from '../statics/star.svg';
+import wars from '../statics/wars.svg';
+
 export default function Home() {
   const { sendRequest } = useFetch();
   const [input, setInput] = useState("");
@@ -30,7 +33,10 @@ export default function Home() {
   };
   return (
     <div className="home-main">
-      <h1>JS-SWAPI-REACT</h1>
+      <div class="starwars-demo">
+        <img src={star} alt="Star" class="star"/>
+        <img src={wars} alt="Wars" class="wars"/>
+      </div>
       <input
         className="home-search-bar"
         type="text"

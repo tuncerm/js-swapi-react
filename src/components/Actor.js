@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { CacheContext } from "../context/cache-context";
 
 import Spinner from "./Spinner";
-import Modal from "./Modal";
+// import Modal from "./Modal";
 
 import "./Actor.css";
 
@@ -39,18 +39,18 @@ export default function Actor({ actor }) {
     fetchFilmData();
   }, [films, getData]);
 
-  const openModal = (url) => {
-    setModalUrl(url);
-    setModal(true);
-  };
-  const closeModal = () => {
-    setModal(false);
-    setModalUrl("");
-  };
+  // const openModal = (url) => {
+  //   setModalUrl(url);
+  //   setModal(true);
+  // };
+  // const closeModal = () => {
+  //   setModal(false);
+  //   setModalUrl("");
+  // };
 
   return (
     <>
-      {modal && <Modal url={modalUrl} close={closeModal} />}
+      {/* {modal && <Modal url={modalUrl} close={closeModal} />} */}
       <div className={"actor-main"}>
         {isLoading ? (
           <Spinner />
@@ -76,12 +76,12 @@ export default function Actor({ actor }) {
               {actorFilms.map((film) => (
                 <p
                   key={btoa(film.url)}
-                  onClick={() => {
-                    openModal(film.url);
-                  }}
+                  // onClick={() => {
+                  //   openModal(film.url);
+                  // }}
                   className="actor-movie-item"
                 >
-                  {film.title}
+                  <Link to={`/films/${btoa(film.url)}`}>{film.title}</Link>
                 </p>
               ))}
             </div>

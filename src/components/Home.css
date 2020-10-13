@@ -24,3 +24,20 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+
+.star, .wars {
+  display: block;
+  margin: 0 auto;
+}
+
+.starwars {
+  perspective: 800px;
+  transform-style: preserve3d;
+  height: 17em;
+  left: 50%;
+  position: absolute;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  width: 34em;
+}
