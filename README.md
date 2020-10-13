@@ -51,3 +51,5 @@ Feel free to use any UI Library you feel comfortable with. ( i.e. Material-UI, R
 
 ### STATE MANAGEMENT
 Feel free to use any state management library you prefer. (i.e. Redux, Mobx, etc.)
+
+#### Checkout css-tricks to see how the opening crawl was implemented.
