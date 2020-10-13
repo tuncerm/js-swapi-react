@@ -45,23 +45,30 @@ export default function Planet() {
           <p>Surface Water: {planet.surface_water}</p>
           <p>Population: {planet.population}</p>
           <hr />
-          <h3>Residents</h3>
-          <div className="planet-subarray">
-            {planet &&
-              planet.residents &&
-              planet.residents.map((character) => (
-                <CharacterCard key={btoa(character)} url={character} />
-              ))}
-          </div>
-          <hr />
-          <h3>Films</h3>
-          <div className="planet-subarray">
-            {planet &&
-              planet.films &&
-              planet.films.map((film) => (
-                <FilmCard key={btoa(film)} url={film} />
-              ))}
-          </div>
+
+          {planet && planet.residents && planet.residents.length > 0 &&
+            <>
+              <h3>Residents</h3>
+              <div className="list-subarray">
+                { planet.residents.map((character) => (
+                    <CharacterCard key={btoa(character)} url={character} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
+
+          {planet && planet.films &&  planet.films.length > 0 &&
+            <>
+              <h3>Films</h3>
+              <div className="list-subarray">
+                { planet.films.map((film) => (
+                    <FilmCard key={btoa(film)} url={film} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
         </div>
       )}
     </div>

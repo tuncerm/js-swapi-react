@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 
 import { CacheContext } from "../context/cache-context";
-import "./VehiclesCard.css";
+import "./Card.css";
+
+import image from "../statics/vehicle.png";
 
 export default function VehiclesCard({ vehicle, url }) {
   const [data, setData] = useState(vehicle);
@@ -28,21 +30,21 @@ export default function VehiclesCard({ vehicle, url }) {
   }, [url, getData]);
 
   return (
-    <div className="vehiclescard-main">
+    <div className="card-main">
       {isLoading && <Spinner />}
       {!isLoading && data && (
         <>
-          <Link
-            to={`/vehicles/${btoa(data.url)}`}
-            className="vehiclescard-title-link"
-          >
-            <h2 className="vehiclescard-title">{data.name}</h2>
-          </Link>
-          <hr />
-          <div className="vehiclescard-detail-div">
-            <p>Model: {data.model}</p>
-            <p>Manufacturer: {data.manufacturer}</p>
-            <p>Cost: {data.cost_in_credits}</p>
+          <div className="card-image-container" >
+            <img className="card-image" src={image} alt={data.name}/>
+          </div>
+          <div className="card-text">
+          <Link to={`/vehicles/${btoa(data.url)}`} className="card-title-link"><h2 className="card-title">{data.name}</h2></Link>
+            <hr />
+            <div className="card-detail-div">
+              <p>Model: {data.model}</p>
+              <p>Manufacturer: {data.manufacturer}</p>
+              <p>Cost: {data.cost_in_credits}</p>
+            </div>
           </div>
         </>
       )}

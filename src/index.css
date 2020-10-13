@@ -1,3 +1,11 @@
+:root {
+  --main-color-primary: #35ba2a;
+  --main-color-secondary: #c7f080;
+  --main-color-effect-primary: #443ba3;
+  --main-color-effect-secondary: #9785c3;
+  --main-color-border: #554269;
+}
+
 body {
   background-color: lavender;
   margin: 0;
@@ -11,4 +19,17 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+*{
+  color: var(--main-color-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--main-color-primary);
+}
+
+.list-subarray {
+  display: flex;
+  flex-wrap: wrap;
 }

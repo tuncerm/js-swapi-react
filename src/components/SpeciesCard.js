@@ -5,7 +5,9 @@ import Spinner from './Spinner';
 
 import { CacheContext } from '../context/cache-context';
 
-import './SpeciesCard.css';
+import './Card.css';
+
+import image from "../statics/species.png";
 
 export default function SpeciesCard({ specie, url }) {
   const [data, setData] = useState(specie);
@@ -28,19 +30,25 @@ export default function SpeciesCard({ specie, url }) {
     fetchSpecieData();
   }, [url, getData]);
 
-
   return (
-    <div className="speciescard-main">
+    <div className="card-main">
       {isLoading && <Spinner />}
-      {!isLoading && data && <>
-        <Link to={`/species/${btoa(data.url)}`} className="speciescard-title-link"><h2 className="speciescard-title">{data.name}</h2></Link>
-        <hr />
-        <div className="speciescard-detail-div">
-          <p>Language: {data.language}</p>
-          <p>Designation: {data.designation}</p>
-          <p>Classification: {data.classification}</p>
-        </div>
-      </>}
+      {!isLoading && data && (
+        <>
+          <div className="card-image-container" >
+            <img className="card-image" src={image} alt={data.name}/>
+          </div>
+          <div className="card-text">
+          <Link to={`/species/${btoa(data.url)}`} className="card-title-link"><h2 className="card-title">{data.name}</h2></Link>
+            <hr />
+            <div className="card-detail-div">
+              <p>Language: {data.language}</p>
+              <p>Designation: {data.designation}</p>
+              <p>Classification: {data.classification}</p>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

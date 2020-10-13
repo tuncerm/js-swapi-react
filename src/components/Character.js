@@ -52,42 +52,54 @@ export default function Character() {
           <p>Gender: {character.gender}</p>
           <p>HomeWorld: {homeworld && <Link to={`/planets/${btoa(homeworld.url)}`}>{homeworld.name}</Link>}</p>
           <hr/>
-          <h3>Species</h3>
-          <div className="character-subarray">
-            {character &&
-              character.species &&
-              character.species.map((specie) => (
-                <SpeciesCard key={btoa(specie)} url={specie} />
-              ))}
-          </div>
-          <hr />
-          <h3>Vehicles</h3>
-          <div className="character-subarray">
-            {character &&
-              character.vehicles &&
-              character.vehicles.map((vehicle) => (
-                <VehiclesCard key={btoa(vehicle)} url={vehicle} />
-              ))}
-          </div>
-          <hr />
-          <h3>StarShips</h3>
-          <div className="character-subarray">
-            {character &&
-              character.starships &&
-              character.starships.map((starship) => (
-                <StarShipsCard key={btoa(starship)} url={starship} />
-              ))}
-          </div>
-          <hr />
-          <h3>Films</h3>
-          <div className="character-subarray">
-            {character &&
-              character.films &&
-              character.films.map((film) => (
-                <FilmCard key={btoa(film)} url={film} />
-              ))}
-          </div>
-          <hr />
+
+          {character && character.species && character.species.length > 0 &&
+            <>
+              <h3>Species</h3>
+              <div className="list-subarray">
+                { character.species.map((specie) => (
+                    <SpeciesCard key={btoa(specie)} url={specie} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
+
+          {character && character.vehicles && character.vehicles.length > 0 &&
+            <>
+              <h3>Vehicles</h3>
+              <div className="list-subarray">
+                { character.vehicles.map((vehicle) => (
+                    <VehiclesCard key={btoa(vehicle)} url={vehicle} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
+
+          {character && character.starships && character.starships.length > 0 &&
+            <>
+              <h3>StarShips</h3>
+              <div className="list-subarray">
+                { character.starships.map((starship) => (
+                    <StarShipsCard key={btoa(starship)} url={starship} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
+
+          {character && character.films &&  character.films.length > 0 &&
+            <>
+              <h3>Films</h3>
+              <div className="list-subarray">
+                { character.films.map((film) => (
+                    <FilmCard key={btoa(film)} url={film} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
         </div>
       )}
     </div>

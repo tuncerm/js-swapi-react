@@ -5,21 +5,22 @@
 }
 
 .home-search-bar {
+  background-color: var(--main-color-effect-primary);
   width: 90%;
   height: 2em;
   margin: 5px auto;
   padding: 1em 2em;
-  border: 1px solid gray;
+  border: 1px solid var(--main-color-border);
   border-radius: 1em;
   outline: none;
 }
 
 .home-search-bar:focus {
-  background-color: lightgray;
+  background-color: var(--main-color-effect-secondary);
 }
 
 .home-list {
-  border-top: 1px solid gray;
+  border-top: 1px solid var(--main-color-border);
   display: flex;
   flex-wrap: wrap;
 }

@@ -23,6 +23,7 @@ import StarShips from "./components/StarShips";
 import StarShip from "./components/StarShip";
 import Vehicles from "./components/Vehicles";
 import Vehicle from "./components/Vehicle";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -30,6 +31,46 @@ function App() {
   const { getData } = useCache();
 
   return (
+    <>
+    <div className="system">
+      <div className="sun"></div>
+      <div className="mer-path"></div>
+        <div className="mer"></div>
+      <div className="ven-path"></div>
+      <div className="ven"></div>
+      <div className="ear-path"></div>
+      <div className="ear"><div className="lune"></div></div>
+      <div className="mar-path"></div>
+      <div className="mar">
+        <div className="pho"></div>
+        <div className="dem"></div>
+      </div>
+      <div className="jup-path"></div>
+      <div className="jup">
+        <div className="spot"></div>
+        <div className="jove io"></div>
+        <div className="jove eur"></div>
+        <div className="jove gan"></div>
+        <div className="jove cal"></div>
+      </div>
+      <div className="sat-path"></div>
+      <div className="sat">
+        <div className="f-ring"></div>
+        <div className="a-ring"></div>
+        <div className="b-ring"></div>
+        <div className="c-ring"></div>
+      </div>
+      <div className="ura-path"></div>
+      <div className="ura">
+        <div className="e-ring"></div>
+      </div>
+      <div className="nep-path"></div>
+      <div className="nep">
+        <div className="spot"></div>
+      </div>
+      <div className="plu-path"></div>
+      <div className="plu"></div>
+    </div>
     <div className="app-main">
       <CacheContext.Provider value={{ getData }}>
         <Router>
@@ -78,7 +119,9 @@ function App() {
           </Switch>
         </Router>
       </CacheContext.Provider>
+      <Footer/>
     </div>
+    </>
   );
 }
 

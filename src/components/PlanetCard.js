@@ -5,7 +5,9 @@ import Spinner from './Spinner';
 
 import { CacheContext } from '../context/cache-context';
 
-import './PlanetCard.css';
+import './Card.css';
+
+import image from "../statics/planet.png";
 
 export default function PlanetCard({ planet, url }) {
   const [data, setData] = useState(planet);
@@ -29,17 +31,25 @@ export default function PlanetCard({ planet, url }) {
   }, [url, getData]);
 
   return (
-    <div className="planetcard-main">
+    <div className="card-main">
       {isLoading && <Spinner />}
-      {!isLoading && data && <>
-        <Link to={`/planets/${btoa(data.url)}`} className="planetcard-title-link"><h2 className="planetcard-title">{data.name}</h2></Link>
-        <hr />
-        <div className="filmcard-detail-div">
-          <p>Climate: {data.climate}</p>
-          <p>Terrain: {data.terrain}</p>
-          <p>Population: {data.population}</p>
-        </div>
-      </>}
+      {!isLoading && data && (
+        <>
+          <div className="card-image-container" >
+            <img className="card-image" src={image} alt={data.name}/>
+          </div>
+          <div className="card-text">
+          <Link to={`/planets/${btoa(data.url)}`} className="card-title-link"><h2 className="card-title">{data.name}</h2></Link>
+            <hr />
+            <div className="card-detail-div">
+              <p>Climate: {data.climate}</p>
+              <p>Terrain: {data.terrain}</p>
+              <p>Population: {data.population}</p>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
+

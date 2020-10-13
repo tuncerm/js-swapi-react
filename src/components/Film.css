@@ -29,13 +29,3 @@
   font-size: smaller;
   text-align: right;
 }
-
-.film-character-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.film-subarray {
-  display: flex;
-  flex-wrap: wrap;
-}

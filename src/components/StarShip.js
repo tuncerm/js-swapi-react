@@ -49,19 +49,30 @@ export default function StarShip() {
           <p>MGLT: {starShip.MGLT}</p>
           <p>StarShip Class: {starShip.starship_class}</p>
           <hr />
-          <h3>Pilots</h3>
-          <div className="starship-subarray">
-            {starShip && starShip.pilots && starShip.pilots.map(pilot=><CharacterCard key={btoa(pilot)} url={pilot}/>)}
-          </div>
-          <hr />
-          <h3>Films</h3>
-          <div className="starship-subarray">
-            {starShip &&
-              starShip.films &&
-              starShip.films.map((film) => (
-                <FilmCard key={btoa(film)} url={film} />
-              ))}
-          </div>
+
+          {starShip && starShip.pilots && starShip.pilots.length > 0 &&
+            <>
+              <h3>Pilots</h3>
+              <div className="list-subarray">
+                { starShip.pilots.map((character) => (
+                    <CharacterCard key={btoa(character)} url={character} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
+
+          {starShip && starShip.films &&  starShip.films.length > 0 &&
+            <>
+              <h3>Films</h3>
+              <div className="list-subarray">
+                { starShip.films.map((film) => (
+                    <FilmCard key={btoa(film)} url={film} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
         </div>
       )}
     </div>

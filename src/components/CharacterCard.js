@@ -5,7 +5,9 @@ import Spinner from './Spinner';
 
 import { CacheContext } from '../context/cache-context';
 
-import './CharacterCard.css';
+import './Card.css';
+
+import image from "../statics/character.png";
 
 export default function CharacterCard({ character, url }) {
   const [data, setData] = useState(character);
@@ -29,17 +31,24 @@ export default function CharacterCard({ character, url }) {
   }, [url, getData]);
 
   return (
-    <div className="charactercard-main">
+    <div className="card-main">
       {isLoading && <Spinner />}
-      {!isLoading && data && <>
-        <Link to={`/people/${btoa(data.url)}`} className="charactercard-title-link"><h2 className="charactercard-title">{data.name}</h2></Link>
-        <hr />
-        <div className="filmcard-detail-div">
-          <p>Birth Year: {data.birth_year}</p>
-          <p>Gender: {data.gender}</p>
-          <p>Height / Weight: {data.height} / {data.mass}</p>
-        </div>
-      </>}
+      {!isLoading && data && (
+        <>
+          <div className="card-image-container" >
+            <img className="card-image" src={image} alt={data.name}/>
+          </div>
+          <div className="card-text">
+            <Link to={`/people/${btoa(data.url)}`} className="card-title-link"><h2 className="card-title">{data.name}</h2></Link>
+            <hr />
+            <div className="card-detail-div">
+              <p>Birth Year: {data.birth_year}</p>
+              <p>Gender: {data.gender}</p>
+              <p>Height / Weight: {data.height} / {data.mass}</p>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

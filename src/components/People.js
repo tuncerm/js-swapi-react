@@ -35,7 +35,7 @@ export default function People() {
 
   return (
     <div className="people-main">
-      <h1>Star Wars Planets</h1>
+      <h1>Star Wars Characters</h1>
       {isLoading && <Spinner asOverlay />}
       <div className="people-item">
         {people &&

@@ -57,6 +57,18 @@ export default function Actor({ actor }) {
         ) : (
           <div className="actor-detail-div">
             <div className="actor-detail-part">
+              <div class="actor-view">
+                <div class="plane main">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+            <div className="actor-detail-part">
               <h5 className="actor-title"><Link to={`/people/${btoa(url)}`}>{name}</Link></h5>
               <p> Born in {birth_year} </p> <p> Height {height} </p>
               <p> {gender} </p>

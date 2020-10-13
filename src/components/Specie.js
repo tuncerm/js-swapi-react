@@ -51,23 +51,30 @@ export default function Specie() {
           <p>HomeWorld: {homeworld && <Link to={`/planets/${btoa(homeworld.url)}`}>{homeworld.name}</Link>}</p>
           <p>Language: {specie.language}</p>
           <hr />
-          <h3>Characters</h3>
-          <div className="specie-subarray">
-            {specie &&
-              specie.people &&
-              specie.people.map((character) => (
-                <CharacterCard key={btoa(character)} url={character} />
-              ))}
-          </div>
-          <hr />
-          <h3>Films</h3>
-          <div className="specie-subarray">
-            {specie &&
-              specie.films &&
-              specie.films.map((film) => (
-                <FilmCard key={btoa(film)} url={film} />
-              ))}
-          </div>
+
+          {specie && specie.people && specie.people.length > 0 &&
+            <>
+              <h3>Characters</h3>
+              <div className="list-subarray">
+                { specie.people.map((character) => (
+                    <CharacterCard key={btoa(character)} url={character} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
+
+          {specie && specie.films &&  specie.films.length > 0 &&
+            <>
+              <h3>Films</h3>
+              <div className="list-subarray">
+                { specie.films.map((film) => (
+                    <FilmCard key={btoa(film)} url={film} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
         </div>
       )}
     </div>

@@ -47,19 +47,30 @@ export default function Vehicle() {
           <p>Consumables: {vehicle.consumables}</p>
           <p>Vehicle Class: {vehicle.vehicle_class}</p>
           <hr />
-          <h3>Pilots</h3>
-          <div className="vehicle-subarray">
-            {vehicle && vehicle.pilots && vehicle.pilots.map(pilot=><CharacterCard key={btoa(pilot)} url={pilot}/>)}
-          </div>
-          <hr />
-          <h3>Films</h3>
-          <div className="vehicle-subarray">
-            {vehicle &&
-              vehicle.films &&
-              vehicle.films.map((film) => (
-                <FilmCard key={btoa(film)} url={film} />
-              ))}
-          </div>
+
+          {vehicle && vehicle.pilots && vehicle.pilots.length > 0 &&
+            <>
+              <h3>Pilots</h3>
+              <div className="list-subarray">
+                { vehicle.pilots.map((character) => (
+                    <CharacterCard key={btoa(character)} url={character} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
+
+          {vehicle && vehicle.films &&  vehicle.films.length > 0 &&
+            <>
+              <h3>Films</h3>
+              <div className="list-subarray">
+                { vehicle.films.map((film) => (
+                    <FilmCard key={btoa(film)} url={film} />
+                  ))}
+              </div>
+              <hr />
+            </>
+          }
         </div>
       )}
     </div>

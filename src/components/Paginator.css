@@ -3,12 +3,13 @@
 }
 
 .paginator-item {
-  border: 1px solid gray;
+  border: 1px solid var(--main-color-border);
   border-radius: 0;
   margin: 0;
   height: 2em;
   width: 2em;
   text-align: center;
+  background-color: darkslategray;
 }
 
 .paginator-next,
@@ -29,12 +30,12 @@
 }
 
 .paginator-item:hover {
-  border:1px solid azure;
+  border:1px solid var(--main-color-effect-secondary);
   cursor: pointer;
   transition: 200ms;
-  box-shadow: 0 2px 5px 0 cyan;
+  box-shadow: 0 2px 5px 0 var(--main-color-secondary);
 }
 
 .paginator-item-active {
-  background-color: burlywood;
+  background-color: darkslateblue;
 }
