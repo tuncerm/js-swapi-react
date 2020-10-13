@@ -12,8 +12,8 @@ import "./Actor.css";
 export default function Actor({ actor }) {
   const { name, height, birth_year, gender, films, url } = actor;
   const [isLoading, setLoading] = useState(false);
-  const [modal, setModal] = useState(false);
-  const [modalUrl, setModalUrl] = useState("");
+  // const [modal, setModal] = useState(false);
+  // const [modalUrl, setModalUrl] = useState("");
 
   const [actorFilms, setActorFilms] = useState([]);
 
